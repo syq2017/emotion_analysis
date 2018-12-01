@@ -1,5 +1,6 @@
 package common.util;
 
+import common.beans.MovieCommon;
 import common.beans.RankMovie;
 import common.beans.RankMovieList;
 import common.constants.Constants;
@@ -152,6 +153,31 @@ public class MySQLUtils {
         conn.commit();
         pst.close();
         logger.info("insert {} rows!", cnt);
+    }
+
+    /**
+     * 插入电影短评信息
+     * @param datas
+     */
+    public static void insertMovieCommons(ArrayList<MovieCommon> datas) throws SQLException, ClassNotFoundException {
+        Connection conn =  getConn();
+        conn.setAutoCommit(false);
+        String sql = "insert into MovieCommon values(?, ?, ?, ?, ?)";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        for (MovieCommon movieCommon : datas) {
+            pst.setString(1, movieCommon.getMovieId());
+            pst.setString(2, movieCommon.getUserName());
+            pst.setString(3, movieCommon.getCommonLevel());
+            pst.setString(4, movieCommon.getDate());
+            pst.setString(5, movieCommon.getCommon());
+            pst.addBatch();
+            logger.info("{}", pst.toString());
+        }
+        //批量任务提交
+        pst.executeBatch();
+        conn.commit();
+        pst.close();
+        logger.info("insert {} rows!", datas.size());
     }
 
 

@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220381ee-2fd1-4633-a4e9-6fdb7b9d1a89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/slf4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/slf4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/common/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/constants/Constants.class" afterDir="false" />
@@ -23,6 +23,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-611927136">
@@ -78,17 +92,17 @@
         <counts>
           <entry key=",gitignore" value="23" />
           <entry key="gitignore" value="4" />
-          <entry key="java" value="6200" />
-          <entry key="properties" value="24" />
-          <entry key="xml" value="14" />
+          <entry key="java" value="8685" />
+          <entry key="properties" value="43" />
+          <entry key="xml" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6200" />
+          <entry key="JAVA" value="8685" />
           <entry key="PLAIN_TEXT" value="27" />
-          <entry key="Properties" value="24" />
-          <entry key="XML" value="14" />
+          <entry key="Properties" value="43" />
+          <entry key="XML" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -96,62 +110,57 @@
           <entry key=",gitignore" value="1" />
           <entry key="class" value="7" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="40" />
+          <entry key="java" value="47" />
           <entry key="properties" value="2" />
-          <entry key="xml" value="1" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="47" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="2" />
-          <entry key="XML" value="1" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-90">
+              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1408#1421#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/slf4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -159,51 +168,72 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+            <state relative-caret-position="223">
+              <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#997#1005#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4578#4579#0" expanded="true" />
-                <element signature="e#4611#4612#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
+                <element signature="e#1009#1010#0" expanded="true" />
+                <element signature="e#1043#1044#0" expanded="true" />
+                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="e#1143#1144#0" expanded="true" />
+                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#1201#1202#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+            <state relative-caret-position="351">
+              <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#369#370#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -241,19 +271,21 @@
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovies.java" />
         <option value="$PROJECT_DIR$/,gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/FileUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/slf4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" />
       </list>
     </option>
   </component>
@@ -384,6 +416,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -422,14 +463,14 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543671884528" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543683678657" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.24633431" />
   </component>
   <component name="RecentsManager">
@@ -449,7 +490,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.DownMovieDetailInfo">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -484,8 +525,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginDouban" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="step0.corpus.crawl.LoginDouban" />
+    <configuration name="DownMovieDetailInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="step0.corpus.crawl.DownMovieDetailInfo" />
       <module name="spark_emotion_anslysis" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -550,19 +591,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LoginDouban" />
       <item itemvalue="Application.DownMovieBaseInfo" />
       <item itemvalue="Application.MySQLUtils" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.DateUtils" />
+      <item itemvalue="Application.DownMovieDetailInfo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DownMovieDetailInfo" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MySQLUtils" />
         <item itemvalue="Application.DateUtils" />
         <item itemvalue="Application.DownMovieBaseInfo" />
-        <item itemvalue="Application.LoginDouban" />
       </list>
     </recent_temporary>
   </component>
@@ -579,12 +620,12 @@
       <workItem from="1543238363458" duration="9341000" />
       <workItem from="1543508443366" duration="2698000" />
       <workItem from="1543624105509" duration="1659000" />
-      <workItem from="1543628731027" duration="31328000" />
+      <workItem from="1543628731027" duration="42897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45026000" />
+    <option name="totallyTimeSpent" value="56595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,7 +641,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
@@ -609,7 +650,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3897937" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51759064" weight="0.38762215" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.4169381" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -626,7 +667,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -642,7 +683,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3897937" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.38762215" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.16938111" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -659,7 +700,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -799,28 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="75" column="84" lean-forward="true" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1814#1815#0" expanded="true" />
-            <element signature="e#5088#5089#0" expanded="true" />
-            <element signature="e#5123#5124#0" expanded="true" />
-            <element signature="e#5167#5168#0" expanded="true" />
-            <element signature="e#5207#5208#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
-            <element signature="e#5296#5297#0" expanded="true" />
-            <element signature="e#5359#5360#0" expanded="true" />
-            <element signature="e#5413#5414#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar!/com/google/gson/stream/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -853,13 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2503">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -927,21 +939,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#997#1005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/slf4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="513">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -955,29 +956,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        <state relative-caret-position="351">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+        <state relative-caret-position="189">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1143#1144#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1408#1421#0" expanded="true" />
           </folding>
         </state>
       </provider>

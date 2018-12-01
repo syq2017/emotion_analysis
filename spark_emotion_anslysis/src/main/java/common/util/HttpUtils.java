@@ -3,6 +3,7 @@ package common.util;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -66,13 +67,16 @@ public class HttpUtils {
         CloseableHttpClient httpClient = HttpClients.custom().setDefaultCookieStore(cookieStore).build();
         CloseableHttpResponse response = null;
         HttpGet httpGet = new HttpGet(url);
-        HttpEntity entity = null;
+        HttpEntity httpEntity = null;
         try {
             response = httpClient.execute(httpGet);
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_FORBIDDEN) {
+                return null;
+            }
             if (response != null) {
-                entity = response.getEntity();
-                if (entity != null){
-                    String data = EntityUtils.toString(entity);
+                httpEntity = response.getEntity();
+                if (httpEntity != null){
+                    String data = EntityUtils.toString(httpEntity);
                     ResponseBody responseBody = new ResponseBody(data, cookieStore);
                     return responseBody;
                 }

@@ -19,7 +19,6 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * 从电影排行榜下载电影信息

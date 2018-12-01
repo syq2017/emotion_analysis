@@ -14,6 +14,6 @@ public class Main {
         BasicConfigurator.configure();
         logger.info("start task............");
         CookieStore cookieStore = LoginDouban.loginDouban(HttpUtils.getHttpGet(), HttpUtils.getHttpPost());
-        DownMovieBaseInfo.downLoadMovieBasicInfo(Constants.MOVIE_TYPE_ID, Constants.INTERVAL_ID, 0, cookieStore);
+        DownMovieBaseInfo.downLoadMovieBasicInfo(Constants.MOVIE_TYPE_ID, Constants.INTERVAL_ID, 1, cookieStore);
     }
 }

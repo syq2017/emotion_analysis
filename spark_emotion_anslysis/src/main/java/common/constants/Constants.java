@@ -40,11 +40,12 @@ public class Constants {
     public static String RANK_BY_TYPE_URL =
             "https://movie.douban.com/j/chart/top_list?type=%d&interval_id=%d:%d&action=&start=%d&limit=20";
 
-    //某个电影详情页
+    //某个电影详情页   https://movie.douban.com/subject/1308741/   --->  1308741:movie id
     public static String MOVIE_DETAIL_URL = "https://movie.douban.com/subject/%s/";
 
     //某个电影的 短评 url，注意不是评论，因为评论最多只显示200条,且多数无文字说明
+    // https://movie.douban.com/subject/1308741/comments?status=P
     public static String MOVIE_COLLECTIONS_URL =
-            "https://movie.douban.com/subject/%s/comments?start=%d&limit=20&sort=new_score&status=P";
+            "https://movie.douban.com/subject/%s/comments?start=%d&limit=20&sort=new_score&status=P&comments_only=1";
 
 }
