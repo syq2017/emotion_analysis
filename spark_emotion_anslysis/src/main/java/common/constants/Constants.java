@@ -16,7 +16,11 @@ public class Constants {
     public static final int[] MOVIE_TYPE_ID = {11, 24, 5, 13, 17, 25, 10, 19, 20, 1, 23, 6,
             26, 14, 7, 28, 8, 2, 4, 22, 3, 27, 16, 15, 12, 29, 30, 18, 31};
 
+    public static final int[] INTERVAL_ID = {100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0};
+
     public static final Map<String, Integer> MOVIE_TYPE_MAP = new HashMap<String, Integer>();
+
+    public static final int UPPER_LIMIT = 10000; //某个类型下的电影数量上限
 
     static {
         for (int i = 0; i < MOVIE_TYPE.length; i++) {
@@ -28,15 +32,16 @@ public class Constants {
     public static final String[] COMMENT_LEVEL = {"力荐", "推荐", "还行", "较差", "很差"};
 
     //存储验证码图片的路径
-    public static final String AUTH_CODE_PATH = "/Users/shiyuquan/Downloads/";
+    public static final String AUTH_CODE_PATH = "D:\\";
 
     //某个类型下的电影列表url
     public static String RANK_BY_TYPE_URL =
-            "https://movie.douban.com/j/chart/top_list?type=%d&interval_id=%d:%d&action=&start=%d&limit=50";
+            "https://movie.douban.com/j/chart/top_list?type=%d&interval_id=%d:%d&action=&start=%d&limit=20";
+
     //某个电影详情页
     public static String MOVIE_DETAIL_URL = "https://movie.douban.com/subject/%s/";
 
-    //某个电影的 短评 url，注意不是评论，因为评论最多只显示200条
+    //某个电影的 短评 url，注意不是评论，因为评论最多只显示200条,且多数无文字说明
     public static String MOVIE_COLLECTIONS_URL =
             "https://movie.douban.com/subject/%s/comments?start=%d&limit=20&sort=new_score&status=P";
 
