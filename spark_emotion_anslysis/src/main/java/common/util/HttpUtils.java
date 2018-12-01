@@ -61,6 +61,36 @@ public class HttpUtils {
         return null;
     }
 
+    public static ResponseBody doGet(String url, CookieStore cookieStore) {
+        logger.info("httpUrl:{}", url);
+        CloseableHttpClient httpClient = HttpClients.custom().setDefaultCookieStore(cookieStore).build();
+        CloseableHttpResponse response = null;
+        HttpGet httpGet = new HttpGet(url);
+        HttpEntity entity = null;
+        try {
+            response = httpClient.execute(httpGet);
+            if (response != null) {
+                entity = response.getEntity();
+                if (entity != null){
+                    String data = EntityUtils.toString(entity);
+                    ResponseBody responseBody = new ResponseBody(data, cookieStore);
+                    return responseBody;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (response != null) {
+                try {
+                    response.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
     /**
      * doPost
      * @return

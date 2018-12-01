@@ -1,16 +1,20 @@
 package step0.corpus.crawl;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import common.beans.RankMovie;
+import common.beans.RankMovieList;
 import common.constants.Constants;
 import common.util.HttpUtils;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * 从电影排行榜下载电影信息
@@ -27,8 +31,7 @@ public class DownMovieBaseInfo {
      * start=20
      * @param previous 上次下载的电影类型index，用于意外终止后重新启动时续传
      */
-    public static void downLoadMovieBasicInfo(int[] typeIds, int[] intervalIds, int previous) {
-
+    public static void downLoadMovieBasicInfo(int[] typeIds, int[] intervalIds, int previous, CookieStore cookieStore) {
         for (int i = previous; i < typeIds.length; i ++) {
             for (int j = 0; j < intervalIds.length - 1; j++) {
                 for (int start = 0; start< Constants.UPPER_LIMIT; start += 20) {
@@ -36,7 +39,11 @@ public class DownMovieBaseInfo {
                     int intervalLow = intervalIds[j-1];
                     String url = String.format(Constants.RANK_BY_TYPE_URL, typeIds[i], intervalHigh, intervalLow, start);
                     HttpGet httpGet = HttpUtils.getHttpGet();
-
+                    HttpPost httpPost = HttpUtils.getHttpPost();
+                    HttpUtils.ResponseBody responseBody = HttpUtils.doGet(url, cookieStore);
+                    String data = responseBody.getData();
+                    cookieStore = responseBody.getCookieStore();
+                    data = data.substring(1, data.length()-1);
                 }
             }
 
@@ -44,13 +51,26 @@ public class DownMovieBaseInfo {
     }
 
     public static void main(String[] args) {
+        System.setProperty("log4j.configuration","file:/Users/shiyuquan/Downloads/spark_emotion_anslysis/src/main/resources/slf4j.properties");
         HttpGet httpGet = HttpUtils.getHttpGet();
         HttpPost httpPost = HttpUtils.getHttpPost();
         CookieStore cookieStore = LoginDouban.loginDouban(httpGet, httpPost);
         String url = String.format(Constants.RANK_BY_TYPE_URL, 11, 100, 90, 20);
-        HttpResponse response = HttpUtils.doGet(httpGet, url, cookieStore);
-        String s = response.getEntity().toString();
-        logger.info(s);
+        HttpUtils.ResponseBody responseBody = HttpUtils.doGet(url, cookieStore);
+        String data = responseBody.getData();
+//        data = data.substring(1, data.length()-1);
+        Gson gson = new Gson();
+        JsonParser jsonParser = new JsonParser();
+        JsonArray jsonArray = jsonParser.parse(data).getAsJsonArray();
+        ArrayList<RankMovie> rankMovies = new ArrayList<RankMovie>();
+        for (JsonElement element : jsonArray) {
+            RankMovie rankMovie = gson.fromJson(element, RankMovie.class);
+            rankMovies.add(rankMovie);
+        }
+        RankMovieList rankMovieList = new RankMovieList(rankMovies);
+        System.out.println("---=====----");
+        System.out.println(rankMovieList);
+
     }
 
 

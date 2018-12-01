@@ -51,7 +51,7 @@ public class LoginDouban {
     private static String captchaUrl = "https://www.douban.com/j/misc/captcha"; //验证码图片请求
     private static String captchaId = null;
     private static String captchaSolution = null;
-
+    private static DefaultHttpClient httpClient = new DefaultHttpClient();
     /**
      * 登陆豆瓣,跳转到 电影排行榜，然后在跳转到 某个类型下的电影排名
      */
@@ -78,16 +78,17 @@ public class LoginDouban {
             //发起登录post请求
             httpPost.setURI(new URI(loginSrc));
             httpPost.setEntity(new UrlEncodedFormEntity(list));
-            CloseableHttpResponse httpResponse = HttpUtils.httpClient.execute(httpPost);
-            if(httpResponse.getStatusLine().getStatusCode() != 200) {
+            CloseableHttpResponse execute = httpClient.execute(httpPost);
+            if(execute.getStatusLine().getStatusCode() != 200) {
                 return null;
             }
-            cookieStore = HttpUtils.httpClient.getCookieStore();
+            execute.close();
+            cookieStore = httpClient.getCookieStore();
 //            httpPost.releaseConnection();
             //跳转到 电影排行榜 页面
             httpGet.setURI(new URI(redirUrl));
-            HttpUtils.httpClient.setCookieStore(cookieStore);
-            CloseableHttpResponse response = HttpUtils.httpClient.execute(httpGet);
+            httpClient.setCookieStore(cookieStore);
+            CloseableHttpResponse response = httpClient.execute(httpGet);
             if(response.getStatusLine().getStatusCode() != 200) {
                 return null;
             }
@@ -99,6 +100,8 @@ public class LoginDouban {
             e.printStackTrace();
         } catch (URISyntaxException e) {
             e.printStackTrace();
+        } finally {
+
         }
         return cookieStore;
     }
@@ -111,7 +114,7 @@ public class LoginDouban {
         HttpGet httpGet = new HttpGet(captchaUrl);
         Captcha captcha = null;
         try{
-            CloseableHttpResponse response = HttpUtils.httpClient.execute(httpGet);
+            CloseableHttpResponse response = httpClient.execute(httpGet);
             HttpEntity entity = response.getEntity();
             String content = EntityUtils.toString(entity, "utf-8");
             response.close();
@@ -145,7 +148,7 @@ public class LoginDouban {
         FileOutputStream outputStream = null;
         HttpGet httpGet = new HttpGet(downUrl);
         try {
-            CloseableHttpResponse response = HttpUtils.httpClient.execute(httpGet);
+            CloseableHttpResponse response = httpClient.execute(httpGet);
             HttpEntity entity = response.getEntity();
             inputStream = entity.getContent();
             int i = -1;
