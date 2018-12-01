@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220381ee-2fd1-4633-a4e9-6fdb7b9d1a89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/,gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/common/beans/RankMovieList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/beans/RankMovieList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/common/util/HttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/util/HttpUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/DownMovieBaseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/DownMovieBaseInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/LoginDouban.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/LoginDouban.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,13 +68,13 @@
         <counts>
           <entry key=",gitignore" value="23" />
           <entry key="gitignore" value="4" />
-          <entry key="java" value="3688" />
+          <entry key="java" value="3703" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3688" />
+          <entry key="JAVA" value="3703" />
           <entry key="PLAIN_TEXT" value="27" />
           <entry key="XML" value="14" />
         </counts>
@@ -93,14 +84,14 @@
           <entry key=",gitignore" value="1" />
           <entry key="class" value="7" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="25" />
+          <entry key="java" value="26" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="26" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
         </counts>
@@ -112,29 +103,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="134">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2851#2862#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
+            <state relative-caret-position="81">
+              <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-621">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="186">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -283,6 +275,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -305,10 +298,11 @@
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
       </list>
     </option>
   </component>
@@ -338,8 +332,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1960" />
-    <option name="y" value="129" />
+    <option name="x" value="137" />
+    <option name="y" value="93" />
     <option name="width" value="1440" />
     <option name="height" value="830" />
   </component>
@@ -439,15 +433,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -470,7 +455,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543648444713" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543648900299" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -585,12 +570,12 @@
       <workItem from="1543238363458" duration="9341000" />
       <workItem from="1543508443366" duration="2698000" />
       <workItem from="1543624105509" duration="1659000" />
-      <workItem from="1543628731027" duration="15539000" />
+      <workItem from="1543628731027" duration="15994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29237000" />
+    <option name="totallyTimeSpent" value="29692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,11 +587,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
@@ -615,7 +600,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2062975" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51759064" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -625,7 +610,7 @@
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4989339" weight="0.5092291" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49946696" weight="0.2519001" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.49946696" visible="true" weight="0.2519001" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -979,16 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -996,20 +971,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="134">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#2851#2862#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        <state relative-caret-position="81">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

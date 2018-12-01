@@ -50,6 +50,7 @@ public class DownMovieBaseInfo {
         }
     }
 
+
     public static void main(String[] args) {
         System.setProperty("log4j.configuration","file:/Users/shiyuquan/Downloads/spark_emotion_anslysis/src/main/resources/slf4j.properties");
         HttpGet httpGet = HttpUtils.getHttpGet();
@@ -58,7 +59,6 @@ public class DownMovieBaseInfo {
         String url = String.format(Constants.RANK_BY_TYPE_URL, 11, 100, 90, 20);
         HttpUtils.ResponseBody responseBody = HttpUtils.doGet(url, cookieStore);
         String data = responseBody.getData();
-//        data = data.substring(1, data.length()-1);
         Gson gson = new Gson();
         JsonParser jsonParser = new JsonParser();
         JsonArray jsonArray = jsonParser.parse(data).getAsJsonArray();

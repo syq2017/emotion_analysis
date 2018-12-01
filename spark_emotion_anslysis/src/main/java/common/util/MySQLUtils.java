@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class MySQLUtils {
 	// JDBC 驱动名及数据库 URL
 	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/court_info";
+	private static final String DB_URL = "jdbc:mysql://localhost:33006/court_info";
 
 	private static Connection conn = null;
 	private static Statement stmt = null;
@@ -33,7 +33,7 @@ public class MySQLUtils {
 	private static ResultSet getQueryResult(String sqlStr) throws ClassNotFoundException {
 		try{
 			// 注册 JDBC 驱动
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL,USER,PASS);
 			// 执行查询
 			stmt = conn.createStatement();
@@ -47,7 +47,7 @@ public class MySQLUtils {
 
 
 	/**
-	 * 得到id
+	 * 得到ids
 	 * @param sql
 	 * @return
 	 * @throws ClassNotFoundException
@@ -62,11 +62,6 @@ public class MySQLUtils {
 		}
 		return ids;
 	}
-
-
-
-
-
 
 	static {
 		try {
