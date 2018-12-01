@@ -60,14 +60,14 @@ public class FileUtils {
      * 释放资源
      * @param reader
      */
-    public static void realeaseWriter (BufferedReader reader) {
+    public static void realeaseReader (BufferedReader reader) {
         try {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-///Users/shiyuquan/Downloads/spark_emotion_anslysis
+
     /**
      * 将content 写入 targetFile
      *
@@ -81,6 +81,19 @@ public class FileUtils {
         }
     }
 
+    /**
+     * 读取文件中的一行，需要自行判断是否为空（文件为空或者已读完）
+     * @param reader
+     * @return
+     */
+    public static String readLine(BufferedReader reader) {
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 }
