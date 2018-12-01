@@ -34,6 +34,7 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -52,11 +53,12 @@ public class LoginDouban {
     private static String captchaId = null;
     private static String captchaSolution = null;
     private static DefaultHttpClient httpClient = new DefaultHttpClient();
+
     /**
      * 登陆豆瓣,跳转到 电影排行榜，然后在跳转到 某个类型下的电影排名
      */
     public static CookieStore loginDouban(HttpGet httpGet, HttpPost httpPost) {
-
+        logger.info("{}","start login....");
         //获取登录验证码图片的token(可理解位针对本次登陆的一个验证码图片id)
         captchaId = getLoginAuthCodeImgToken();
         System.out.println("请输入 验证码");
@@ -92,6 +94,7 @@ public class LoginDouban {
             if(response.getStatusLine().getStatusCode() != 200) {
                 return null;
             }
+            logger.info("{}", "login success...");
             response.close();
             httpGet.releaseConnection();
         } catch (ClientProtocolException e) {

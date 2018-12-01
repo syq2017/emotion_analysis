@@ -16,11 +16,13 @@ public class Constants {
     public static final int[] MOVIE_TYPE_ID = {11, 24, 5, 13, 17, 25, 10, 19, 20, 1, 23, 6,
             26, 14, 7, 28, 8, 2, 4, 22, 3, 27, 16, 15, 12, 29, 30, 18, 31};
 
+    public static final String DELEMITER = "*&^-_";
+
     public static final int[] INTERVAL_ID = {100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0};
 
     public static final Map<String, Integer> MOVIE_TYPE_MAP = new HashMap<String, Integer>();
 
-    public static final int UPPER_LIMIT = 10000; //某个类型下的电影数量上限
+    public static final int UPPER_LIMIT = 5000; //某个类型下（type） 一段间隔内(interval_id)的电影下载数量上限
 
     static {
         for (int i = 0; i < MOVIE_TYPE.length; i++) {

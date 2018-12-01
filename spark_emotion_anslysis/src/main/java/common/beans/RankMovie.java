@@ -54,16 +54,16 @@ public class RankMovie implements Serializable {
     private String title;
     private String url;
     private String release_date;
-    private String actor_count;
-    private String vote_count;
+    private int actor_count;
+    private int vote_count;
     private String score;
     private ArrayList<String> actors;
-    private String is_watched;
+    private boolean is_watched;
 
     public RankMovie() {
     }
 
-    public RankMovie(ArrayList<String> rating, int rank, String cover_url, boolean is_playable, String id, ArrayList<String> types, ArrayList<String> regions, String title, String url, String release_date, String actor_count, String vote_count, String score, ArrayList<String> actors, String is_watched) {
+    public RankMovie(ArrayList<String> rating, int rank, String cover_url, boolean is_playable, String id, ArrayList<String> types, ArrayList<String> regions, String title, String url, String release_date, int actor_count, int vote_count, String score, ArrayList<String> actors, boolean is_watched) {
         this.rating = rating;
         this.rank = rank;
         this.cover_url = cover_url;
@@ -161,19 +161,19 @@ public class RankMovie implements Serializable {
         this.release_date = release_date;
     }
 
-    public String getActor_count() {
+    public int getActor_count() {
         return actor_count;
     }
 
-    public void setActor_count(String actor_count) {
+    public void setActor_count(int actor_count) {
         this.actor_count = actor_count;
     }
 
-    public String getVote_count() {
+    public int getVote_count() {
         return vote_count;
     }
 
-    public void setVote_count(String vote_count) {
+    public void setVote_count(int vote_count) {
         this.vote_count = vote_count;
     }
 
@@ -193,11 +193,11 @@ public class RankMovie implements Serializable {
         this.actors = actors;
     }
 
-    public String getIs_watched() {
+    public boolean getIs_watched() {
         return is_watched;
     }
 
-    public void setIs_watched(String is_watched) {
+    public void setIs_watched(boolean is_watched) {
         this.is_watched = is_watched;
     }
 

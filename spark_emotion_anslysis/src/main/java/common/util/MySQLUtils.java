@@ -1,9 +1,11 @@
 package common.util;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import common.beans.RankMovie;
+import common.beans.RankMovieList;
+import common.constants.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,11 +13,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Properties;
+import java.util.Set;
 
 public class MySQLUtils {
+
+    private static Logger logger = LoggerFactory.getLogger(MySQLUtils.class.getName());
 	// JDBC 驱动名及数据库 URL
 	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	private static final String DB_URL = "jdbc:mysql://localhost:33006/court_info";
+	private static final String DB_URL = "jdbc:mysql://localhost:33006/large_db?useSSL=false";
 
 	private static Connection conn = null;
 	private static Statement stmt = null;
@@ -23,6 +30,33 @@ public class MySQLUtils {
 	// 数据库的用户名与密码
 	private static final String USER = "root";
 	private static final String PASS = "123456";
+
+	private static Set<String> movieIds = new HashSet<String>();
+
+    static {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            stmt = conn.createStatement();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //查询当前已有的电影ID，避免重复下载
+    static {
+        String sql = "select id from RankMovie";
+        try {
+            getAllId(sql, "id").stream().forEach(ele -> movieIds.add(ele));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 	/**
 	 * 获取查询结果集
@@ -45,7 +79,6 @@ public class MySQLUtils {
 		return null;
 	}
 
-
 	/**
 	 * 得到ids
 	 * @param sql
@@ -63,62 +96,66 @@ public class MySQLUtils {
 		return ids;
 	}
 
-	static {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			conn = DriverManager.getConnection(DB_URL,USER,PASS);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			stmt = conn.createStatement();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    /**
+     * 插入电影基本信息
+     * @param list
+     * @return
+     */
+	public static void insertRankMovies (RankMovieList list) throws SQLException, ClassNotFoundException {
+        Connection conn =  getConn();
+        conn.setAutoCommit(false);
+        String sql = "insert into RankMovie values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        ArrayList<RankMovie> movies = list.getMovies();
+        int cnt = 0;
+        for (RankMovie rankMovie : movies) {
+            if (movieIds.contains(rankMovie.getId())) {
+                continue;
+            } else {
+                movieIds.add(rankMovie.getId());
+            }
+            cnt ++;
+            pst.setString(1, rankMovie.getId());
 
-	}
+            final StringBuilder rating = new StringBuilder();
+            rankMovie.getRating().stream().forEach( ele -> rating.append(ele + Constants.DELEMITER));
+            pst.setString(2, rating.toString());
 
-	/**
-	 * 讲数据分析结果存入数据库
-	 * @param tableName
-	 * @param dataPath
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
-	 * @throws IOException
-	 */
-	public static void addAnalysisData(String tableName,String dataPath) throws ClassNotFoundException, SQLException, IOException {
-		String tName = "t_ag_" + tableName;
-		String sql = "insert into " + tName + "(year,product,"+tableName+") values(?,?,?)";
-		//MySQL 批量插入
-		Connection conn =  getConn();
-		conn.setAutoCommit(false);
-		PreparedStatement pst = conn.prepareStatement(sql);
-		BufferedReader br = new BufferedReader(new FileReader(new File(dataPath)));
-		String line = null;
-		while((line = br.readLine()) != null) {
-			String[] items = line.split("\t");
-			pst.setString(1, items[0]);
-			pst.setString(2, items[1]);
-			pst.setString(3, items[2]);
-			pst.addBatch();
-		}
-		//批量任务提交
-		pst.executeBatch();
-		conn.commit();
-		pst.close();
-	}
+            pst.setInt(3, rankMovie.getRank());
+            pst.setString(4, rankMovie.getCover_url());
+            pst.setBoolean(5, rankMovie.isIs_playable());
 
+            final StringBuilder types = new StringBuilder();
+            rankMovie.getTypes().stream().forEach(ele -> types.append(ele + Constants.DELEMITER));
+            pst.setString(6, types.toString());
+
+            final StringBuilder regions = new StringBuilder();
+            rankMovie.getRegions().stream().forEach(ele -> regions.append(ele + Constants.DELEMITER));
+            pst.setString(7, regions.toString());
+
+            pst.setString(8, rankMovie.getTitle());
+            pst.setString(9, rankMovie.getUrl());
+            pst.setString(10, rankMovie.getRelease_date());
+            pst.setInt(11, rankMovie.getActor_count());
+            pst.setInt(12, rankMovie.getVote_count());
+            pst.setString(13, rankMovie.getScore());
+
+            final StringBuilder actors = new StringBuilder();
+            rankMovie.getActors().stream().forEach(ele -> actors.append(ele + Constants.DELEMITER));
+            pst.setString(14, actors.toString());
+            pst.setBoolean(15, rankMovie.getIs_watched());
+            pst.addBatch();
+            logger.info("{}", pst.toString());
+        }
+        //批量任务提交
+        pst.executeBatch();
+        conn.commit();
+        pst.close();
+        logger.info("insert {} rows!", cnt);
+    }
 
 
 	public static Connection getConn() throws ClassNotFoundException, SQLException {
-
 		return conn;
 	}
 
@@ -138,12 +175,6 @@ public class MySQLUtils {
 		return false;
 	}
 
-
-
-
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-	}
-
 	private static void closeMySQL() throws SQLException {
 		if(!stmt.isClosed()) {
 			stmt.close();
@@ -152,4 +183,10 @@ public class MySQLUtils {
 			conn.close();
 		}
 	}
+
+	@MyTestIgnore
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Connection connection = getConn();
+        Properties clientInfo = connection.getClientInfo();
+    }
 }
