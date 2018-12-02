@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by cage on 2018-12-01
+ * Created by cage
  */
 public class RankMovieList implements Serializable {
     private ArrayList<RankMovie> movies;

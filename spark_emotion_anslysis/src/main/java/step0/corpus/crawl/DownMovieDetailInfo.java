@@ -2,6 +2,7 @@ package step0.corpus.crawl;
 
 import common.beans.MovieCommon;
 import common.constants.Constants;
+import common.util.DateUtils;
 import common.util.HttpUtils;
 import common.util.MySQLUtils;
 import common.util.MyTestIgnore;
@@ -9,14 +10,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.omg.PortableInterceptor.ServerRequestInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.apache.http.client.CookieStore;
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -31,9 +30,10 @@ public class DownMovieDetailInfo {
      * 下载电影短评信息、解析、入库
      * @param cookieStore
      */
-    public static void downloadMovieDetailInfo( CookieStore cookieStore) throws SQLException, ClassNotFoundException {
+    public static void downloadMovieDetailInfo( CookieStore cookieStore) throws SQLException, ClassNotFoundException, InterruptedException {
         int sqlStart = 0;
         int sqlLimit = 100;
+        boolean switchSleepSecond = false;
         for (; ; sqlStart += sqlLimit) {
             ArrayList<String> movieIds = getMovieIdsFromDB(sqlStart, sqlLimit);
             if (movieIds.size() == 0) {
@@ -51,6 +51,13 @@ public class DownMovieDetailInfo {
                     cookieStore = responseBody.getCookieStore();
                     ArrayList<MovieCommon> movieCommons = getMovieCommons(data, movieId);
                     MySQLUtils.insertMovieCommons(movieCommons);
+                    
+                    if (switchSleepSecond) {
+                        Thread.sleep(DateUtils.getShortSleepSeconds() * 1000);
+                    } else {
+                        Thread.sleep(DateUtils.getSleepSeconds() * 1000);
+                    }
+                    switchSleepSecond = !switchSleepSecond;
                 }
             }
         }
@@ -114,24 +121,31 @@ public class DownMovieDetailInfo {
 
     @MyTestIgnore
     public static void main(String[] args) {
-        try {
-            String html = "F:\\淘宝\\客户\\0001-阿驰在此12000程序论文\\代码\\独自等待短评.html";
-            Document document = Jsoup.parse(new File(html), "utf-8");
-            Elements comments = document.getElementsByAttributeValue("class", "comment");
-            for (Element element : comments) {
-                Elements elementsByAttributeValue = element.getElementsByTag("h3").first().getElementsByAttributeValue("class", "comment-info");
-                for ( Element ele : elementsByAttributeValue) {
-                    Element commonAuthor = ele.getElementsByTag("a").first();
-                    System.out.println(commonAuthor.text());
-                    String commonLevel = ele.getElementsByTag("span").get(2).attr("title");
-                    System.out.println(commonLevel);
-                    String commonTime = ele.getElementsByAttributeValue("class", "comment-time ").first().attr("title");
-                    System.out.println(commonTime);
-                }
-                Element elementsByAttributeValue1 = element.getElementsByTag("p").first().getElementsByAttributeValue("class", "short").first();
-                System.out.println(elementsByAttributeValue1.getElementsByTag("span").text());
-                System.out.println("-----------------------");
-            }
+
+        boolean res = true;
+        res = !res;
+        System.out.println(res);
+        res = !res;
+        System.out.println(res);
+
+//        try {
+//            String html = "F:\\淘宝\\客户\\0001-阿驰在此12000程序论文\\代码\\独自等待短评.html";
+//            Document document = Jsoup.parse(new File(html), "utf-8");
+//            Elements comments = document.getElementsByAttributeValue("class", "comment");
+//            for (Element element : comments) {
+//                Elements elementsByAttributeValue = element.getElementsByTag("h3").first().getElementsByAttributeValue("class", "comment-info");
+//                for ( Element ele : elementsByAttributeValue) {
+//                    Element commonAuthor = ele.getElementsByTag("a").first();
+//                    System.out.println(commonAuthor.text());
+//                    String commonLevel = ele.getElementsByTag("span").get(2).attr("title");
+//                    System.out.println(commonLevel);
+//                    String commonTime = ele.getElementsByAttributeValue("class", "comment-time ").first().attr("title");
+//                    System.out.println(commonTime);
+//                }
+//                Element elementsByAttributeValue1 = element.getElementsByTag("p").first().getElementsByAttributeValue("class", "short").first();
+//                System.out.println(elementsByAttributeValue1.getElementsByTag("span").text());
+//                System.out.println("-----------------------");
+//            }
 
 
 
@@ -149,9 +163,7 @@ public class DownMovieDetailInfo {
 //
 //                System.out.println("----------------------");
 //            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
     }
 }

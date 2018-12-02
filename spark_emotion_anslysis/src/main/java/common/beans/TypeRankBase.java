@@ -2,7 +2,7 @@ package common.beans;
 
 /**
  * 每个类型抓取时的参数封装类
- * Created by cage on 2018-11-25
+ * Created by cage
  */
 public class TypeRankBase {
     private String type;
