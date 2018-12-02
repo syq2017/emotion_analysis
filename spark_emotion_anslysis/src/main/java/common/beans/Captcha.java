@@ -3,7 +3,7 @@ package common.beans;
 import java.io.Serializable;
 
 /**
- * Created by cage on 2018-11-25
+ * Created by cage
  */
 public class Captcha implements Serializable {
     private String url;

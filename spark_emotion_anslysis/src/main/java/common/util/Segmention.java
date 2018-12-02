@@ -3,17 +3,30 @@ package common.util;
 import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.huaban.analysis.jieba.SegToken;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
- * Step2 : jieba分词
+ * jieba分词
  */
 public class Segmention {
+    private static ExecutorService segmentTask;
+
     /**
-     * Step2 : 分词(单线程分词)
+     * 分词(单线程分词)
      */
-    public static void segmention(String filePath,String dstFile) throws IOException {
+    public static void segmention(String filePath, String dstFile) throws IOException {
         long startTime = System.currentTimeMillis() / 1000;
         JiebaSegmenter segmenter = new JiebaSegmenter();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath),"GB18030"));
@@ -40,26 +53,20 @@ public class Segmention {
 
     /**
      * Step2 : 分词(多线程分词)
+     * @param filePaths  待分词文件的父目录
+     * @param dstPath  分词后的文件目录
      */
     public static void segmentionMultiThread(String filePaths,String dstPath) throws IOException {
         long startTime = System.currentTimeMillis() / 1000;
         File files = new File(filePaths);
         if(files.isDirectory()){
             File[] ffs = files.listFiles();
-            Thread[] threads = new Thread[ffs.length];
-            for(int i = 0;i<threads.length;i++){
+            segmentTask = Executors.newFixedThreadPool(OSUtils.getCpuCores());
+            for(int i = 0; i < files.length(); i ++) {
                 SegThread segThread = new SegThread();
                 segThread.filePath = ffs[i];
                 segThread.dstPath = dstPath + i + ".txt";
-                threads[i] = new Thread(segThread);
-                threads[i].start();
-            }
-            for(Thread thread : threads){
-                try {
-                    thread.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                segmentTask.submit(segThread);
             }
         }
         long endTime = System.currentTimeMillis() / 1000;
@@ -67,7 +74,7 @@ public class Segmention {
     }
 
 
-    static class SegThread implements Runnable{
+    private static class SegThread implements Runnable{
         public File filePath;
         public String dstPath ;
         @Override

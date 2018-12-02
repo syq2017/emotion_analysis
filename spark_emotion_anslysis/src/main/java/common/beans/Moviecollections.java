@@ -1,7 +1,6 @@
 package common.beans;
 
 /**
- *
  * 电影评论
  */
 public class Moviecollections {

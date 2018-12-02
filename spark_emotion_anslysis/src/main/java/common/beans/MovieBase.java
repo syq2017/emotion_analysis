@@ -1,7 +1,7 @@
 package common.beans;
 
 /**
- * Created by cage on 2018-11-25
+ * Created by cage
  */
 public class MovieBase {
     private int id; //在插入数据库时有db生成

@@ -42,7 +42,7 @@ public class HttpUtils {
             response = httpClient.execute(httpGet);
             if (response != null) {
                 entity = response.getEntity();
-                if (entity != null){
+                if (entity != null) {
                     String data = EntityUtils.toString(entity);
                     ResponseBody responseBody = new ResponseBody(data, cookieStore);
                     return responseBody;

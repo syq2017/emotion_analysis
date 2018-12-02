@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by cage on 2018-11-25
+ * Created by cage
  */
 public class Constants {
 

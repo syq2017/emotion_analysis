@@ -1,7 +1,7 @@
 package common.beans;
 
 /**
- * Created by cage on 2018-11-25
+ * Created by cage
  */
 public class MovieDetail extends MovieBase {
     private String director; // 导演
