@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220381ee-2fd1-4633-a4e9-6fdb7b9d1a89" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/common/beans/MovieCommonPage.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/util/OSUtils.java" afterDir="false" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/Captcha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/Captcha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/MovieBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/MovieBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/MovieDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/MovieDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/Moviecollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/Moviecollections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/beans/TypeRankBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/beans/TypeRankBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/Segmention.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/Segmention.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" afterDir="false" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,14 +102,22 @@
         <counts>
           <entry key=",gitignore" value="23" />
           <entry key="gitignore" value="4" />
+<<<<<<< HEAD
           <entry key="java" value="10519" />
+=======
+          <entry key="java" value="9238" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <entry key="properties" value="43" />
           <entry key="xml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="10519" />
+=======
+          <entry key="JAVA" value="9238" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <entry key="PLAIN_TEXT" value="27" />
           <entry key="Properties" value="43" />
           <entry key="XML" value="23" />
@@ -107,15 +128,24 @@
           <entry key=",gitignore" value="1" />
           <entry key="class" value="8" />
           <entry key="gitignore" value="1" />
+<<<<<<< HEAD
           <entry key="java" value="70" />
+=======
+          <entry key="java" value="61" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <entry key="properties" value="2" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+<<<<<<< HEAD
           <entry key="CLASS" value="8" />
           <entry key="JAVA" value="70" />
+=======
+          <entry key="CLASS" value="7" />
+          <entry key="JAVA" value="61" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="3" />
@@ -126,6 +156,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="183">
@@ -133,16 +164,38 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3424#3432#0" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="73" column="28" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/RawFileFilter.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="379">
               <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+=======
+            <state relative-caret-position="270">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/Segmention.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,22 +204,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
               <caret line="93" column="26" lean-forward="true" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/OSUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#148#149#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieCommonPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1701">
+              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               <folding>
                 <element signature="e#378#379#0" expanded="true" />
                 <element signature="e#402#403#0" expanded="true" />
@@ -182,17 +259,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
               <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -201,15 +294,41 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/TypeRankBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="278">
               <caret line="37" column="53" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="53" />
+=======
+            <state relative-caret-position="450">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
               <folding>
                 <element signature="e#1287#1295#0" expanded="true" />
               </folding>
@@ -250,13 +369,22 @@
         <option value="$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java" />
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" />
         <option value="$PROJECT_DIR$/src/main/resources/slf4j.properties" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/beans/MovieCommon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
         <option value="$PROJECT_DIR$/src/main/java/common/beans/Captcha.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/MovieBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/Moviecollections.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/MovieDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/beans/TypeRankBase.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/common/util/OSUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/Segmention.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" />
@@ -265,6 +393,12 @@
         <option value="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/OSUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/Segmention.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" />
@@ -398,24 +532,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -445,7 +561,11 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543749805715" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543717956832" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -581,11 +701,19 @@
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+=======
+        <item itemvalue="Application.DownMovieDetailInfo" />
+        <item itemvalue="Application.OSUtils" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.DownMovieDetailInfo" />
         <item itemvalue="Application.DateUtils" />
+<<<<<<< HEAD
         <item itemvalue="Application.OSUtils" />
         <item itemvalue="Application.MySQLUtils" />
+=======
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
       </list>
     </recent_temporary>
   </component>
@@ -602,12 +730,20 @@
       <workItem from="1543238363458" duration="9341000" />
       <workItem from="1543508443366" duration="2698000" />
       <workItem from="1543624105509" duration="1659000" />
+<<<<<<< HEAD
       <workItem from="1543628731027" duration="59825000" />
+=======
+      <workItem from="1543628731027" duration="47016000" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="73523000" />
+=======
+    <option name="totallyTimeSpent" value="60714000" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,9 +767,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.48642778" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.2844734" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30076003" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3897937" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.51759064" visible="true" weight="0.3984799" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -777,6 +919,8 @@
       </provider>
     </entry>
     <entry file="jar://F:/software/jdk8/install/src.zip!/java/sql/Statement.java">
+<<<<<<< HEAD
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="573" column="42" selection-start-line="573" selection-start-column="34" selection-end-line="573" selection-end-column="42" />
@@ -784,12 +928,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/slf4j.properties">
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/resources/slf4j.properties">
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -797,6 +945,73 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/Captcha.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="135">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/Moviecollections.java">
+      <provider selected="true" editor-type-id="text-editor">
+=======
+        <state relative-caret-position="251">
+          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -822,6 +1037,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/Moviecollections.java">
       <provider selected="true" editor-type-id="text-editor">
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
         <state relative-caret-position="81">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
@@ -975,20 +1191,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="379">
           <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+=======
+        <state relative-caret-position="612">
+          <caret line="73" column="28" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/RawFileFilter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="567">
           <caret line="93" column="26" lean-forward="true" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+=======
+        <state relative-caret-position="270">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/Segmention.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/OSUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/RankMovie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/RankMovieList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/TypeRankBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,6 +1308,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="183">
           <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
           <folding>
@@ -1035,6 +1332,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="63" column="56" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+=======
+        <state relative-caret-position="315">
+          <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+>>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
