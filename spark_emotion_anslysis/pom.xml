@@ -78,6 +78,12 @@
             <version>1.10.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.commsen.stopwatch.api</groupId>
+            <artifactId>stopwatch</artifactId>
+            <version>0.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

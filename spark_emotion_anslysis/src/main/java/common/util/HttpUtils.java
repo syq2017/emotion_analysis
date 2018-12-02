@@ -70,7 +70,7 @@ public class HttpUtils {
         HttpEntity httpEntity = null;
         try {
             response = httpClient.execute(httpGet);
-            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_FORBIDDEN) {
+            if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK ) {
                 return null;
             }
             if (response != null) {

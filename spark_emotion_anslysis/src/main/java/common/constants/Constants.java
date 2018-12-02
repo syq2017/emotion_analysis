@@ -1,8 +1,11 @@
 package common.constants;
 
 import javax.naming.ldap.HasControls;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by cage
@@ -32,6 +35,10 @@ public class Constants {
 
     //五星 ---> 一星
     public static final String[] COMMENT_LEVEL = {"力荐", "推荐", "还行", "较差", "很差"};
+    public static final Set<String> COMMENT_LEVEL_SET = new HashSet<String>();
+    static {
+        Arrays.asList(COMMENT_LEVEL).stream().forEach(ele -> COMMENT_LEVEL_SET.add(ele));
+    }
 
     //存储验证码图片的路径
     public static final String AUTH_CODE_PATH = "D:\\";

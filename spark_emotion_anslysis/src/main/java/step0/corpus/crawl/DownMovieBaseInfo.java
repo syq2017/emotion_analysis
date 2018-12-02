@@ -60,7 +60,7 @@ public class DownMovieBaseInfo {
                     }
                     RankMovieList rankMovieList = new RankMovieList(rankMovies);
                     MySQLUtils.insertRankMovies(rankMovieList);
-                    int seconds = DateUtils.getSleepSeconds();
+                    int seconds = DateUtils.getShortSleepSeconds();
                     logger.info("sleep: {} s", seconds);
                     Thread.sleep(seconds * 1000);
                 }

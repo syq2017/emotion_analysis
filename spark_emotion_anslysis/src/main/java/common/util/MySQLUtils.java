@@ -21,6 +21,7 @@ import java.util.Set;
 public class MySQLUtils {
 
     private static Logger logger = LoggerFactory.getLogger(MySQLUtils.class.getName());
+
 	// JDBC 驱动名及数据库 URL
 	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	private static final String DB_URL = "jdbc:mysql://localhost:33006/large_db?useSSL=false";
@@ -159,24 +160,48 @@ public class MySQLUtils {
      * 插入电影短评信息
      * @param datas
      */
-    public static void insertMovieCommons(ArrayList<MovieCommon> datas) throws SQLException, ClassNotFoundException {
-        Connection conn =  getConn();
-        conn.setAutoCommit(false);
-        String sql = "insert into MovieCommon values(?, ?, ?, ?, ?)";
-        PreparedStatement pst = conn.prepareStatement(sql);
-        for (MovieCommon movieCommon : datas) {
-            pst.setString(1, movieCommon.getMovieId());
-            pst.setString(2, movieCommon.getUserName());
-            pst.setString(3, movieCommon.getCommonLevel());
-            pst.setString(4, movieCommon.getDate());
-            pst.setString(5, movieCommon.getCommon());
-            pst.addBatch();
-            logger.info("{}", pst.toString());
+    public static void insertMovieCommons(ArrayList<MovieCommon> datas) {
+        if (datas == null || datas.size() == 0) {
+            return;
         }
+        Connection conn = null;
+        PreparedStatement pst = null;
+        String sql = "insert into MovieCommon values(?, ?, ?, ?, ?)";
+        try {
+            conn = getConn();
+            conn.setAutoCommit(false);
+            pst = conn.prepareStatement(sql);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            for (MovieCommon movieCommon : datas) {
+                pst.setString(1, movieCommon.getMovieId());
+                pst.setString(2, movieCommon.getUserName());
+                if (!Constants.COMMENT_LEVEL_SET.contains(movieCommon.getCommonLevel())) {
+                    continue;
+                }
+                pst.setString(3, movieCommon.getCommonLevel());
+                pst.setString(4, movieCommon.getDate());
+                pst.setString(5, movieCommon.getCommon());
+                pst.addBatch();
+                logger.info("{}", pst.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //批量任务提交
-        pst.executeBatch();
-        conn.commit();
-        pst.close();
+        try {
+            pst.executeBatch();
+            conn.commit();
+            pst.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         logger.info("insert {} rows!", datas.size());
     }
 
