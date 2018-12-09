@@ -7,8 +7,6 @@ import common.constants.Constants;
 import common.util.DateUtils;
 import common.util.HttpUtils;
 import common.util.MySQLUtils;
-import common.util.MyTestIgnore;
-import org.apache.log4j.BasicConfigurator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import org.apache.http.client.CookieStore;
 
-import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,20 +31,14 @@ public class DownMovieDetailInfo{
      * 下载电影短评信息、解析、入库
      * @param cookieStore
      */
-<<<<<<< HEAD
     public static void downloadMovieDetailInfo( CookieStore cookieStore) throws Exception {
         int sqlStart = 0;
         int sqlLimit = 100;
         HashSet<String> movieIdsFromInserttedDB = getMovieIdsFromInserttedDB();
-=======
-    public static void downloadMovieDetailInfo( CookieStore cookieStore) throws SQLException, ClassNotFoundException, InterruptedException {
-        int sqlStart = 0;
-        int sqlLimit = 100;
-        boolean switchSleepSecond = false;
->>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
+
         for (; ; sqlStart += sqlLimit) {
 
-            ArrayList<String> movieIds = getMovieIdsFromDB(sqlStart, sqlLimit);
+            ArrayList<String> movieIds = getMovieIdsFromRankMovie(sqlStart, sqlLimit);
             if (movieIds.size() == 0) {
                 break;
             }
@@ -76,19 +67,10 @@ public class DownMovieDetailInfo{
                         logger.info("movieCommons.size: {}", movieCommons.size());
                     }
                     MySQLUtils.insertMovieCommons(movieCommons);
-<<<<<<< HEAD
                     int seconds = DateUtils.getShortSleepSeconds();
                     logger.info("sleep:{} seconds", seconds);
                     Thread.sleep(seconds * 1000);
-=======
-                    
-                    if (switchSleepSecond) {
-                        Thread.sleep(DateUtils.getShortSleepSeconds() * 1000);
-                    } else {
-                        Thread.sleep(DateUtils.getSleepSeconds() * 1000);
-                    }
-                    switchSleepSecond = !switchSleepSecond;
->>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
+
                 }
             }
         }
@@ -99,8 +81,18 @@ public class DownMovieDetailInfo{
      * @param start  用于故障时继续作业
      * @param limit  每页查询数量
      */
-    public static ArrayList<String> getMovieIdsFromDB(int start, int limit) throws SQLException, ClassNotFoundException {
+    public static ArrayList<String> getMovieIdsFromRankMovie(int start, int limit) {
         String sql = "select id from RankMovie limit " + start +"," + limit;
+        logger.info("{}", sql);
+        return MySQLUtils.getAllId(sql, "id");
+    }
+
+    /**
+     * 得到已经下载过短评的电影ID
+     * @return
+     */
+    public static ArrayList<String> getMovieIDsFromMovieCommon() throws SQLException, ClassNotFoundException {
+        String sql = "select distinct(id) from MovieCommon";
         logger.info("{}", sql);
         return MySQLUtils.getAllId(sql, "id");
     }
@@ -161,59 +153,5 @@ public class DownMovieDetailInfo{
             result.add(movieCommon);
         }
         return result;
-    }
-
-    @MyTestIgnore
-<<<<<<< HEAD
-    public static void main(String[] args) throws Exception {
-        BasicConfigurator.configure();
-        downloadMovieDetailInfo(null);
-=======
-    public static void main(String[] args) {
-
-        boolean res = true;
-        res = !res;
-        System.out.println(res);
-        res = !res;
-        System.out.println(res);
-
-//        try {
-//            String html = "F:\\淘宝\\客户\\0001-阿驰在此12000程序论文\\代码\\独自等待短评.html";
-//            Document document = Jsoup.parse(new File(html), "utf-8");
-//            Elements comments = document.getElementsByAttributeValue("class", "comment");
-//            for (Element element : comments) {
-//                Elements elementsByAttributeValue = element.getElementsByTag("h3").first().getElementsByAttributeValue("class", "comment-info");
-//                for ( Element ele : elementsByAttributeValue) {
-//                    Element commonAuthor = ele.getElementsByTag("a").first();
-//                    System.out.println(commonAuthor.text());
-//                    String commonLevel = ele.getElementsByTag("span").get(2).attr("title");
-//                    System.out.println(commonLevel);
-//                    String commonTime = ele.getElementsByAttributeValue("class", "comment-time ").first().attr("title");
-//                    System.out.println(commonTime);
-//                }
-//                Element elementsByAttributeValue1 = element.getElementsByTag("p").first().getElementsByAttributeValue("class", "short").first();
-//                System.out.println(elementsByAttributeValue1.getElementsByTag("span").text());
-//                System.out.println("-----------------------");
-//            }
-
-
-
-
-//            Elements elementsByAttributeValue = document.getElementsByAttributeValue("class", "comment-info");
-//            System.out.println(elementsByAttributeValue.size());
-//            System.out.println(">>>>>>>>>>");
-//            for ( Element element : elementsByAttributeValue) {
-//                System.out.println(element);
-//                Element a = element.getElementsByTag("a").first();
-//                System.out.println(a.text());
-//
-//                String span = element.getElementsByTag("span").get(2).attr("title");
-//                System.out.println(span);
-//
-//                System.out.println("----------------------");
-//            }
-
-
->>>>>>> 8888fe740d47ddc5c5df5a18fa0f376823c796ae
     }
 }

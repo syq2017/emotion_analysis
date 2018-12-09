@@ -37,6 +37,12 @@
         </dependency>
 
         <dependency>
+            <groupId>net.sourceforge.jchardet</groupId>
+            <artifactId>jchardet</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.huaban</groupId>
             <artifactId>jieba-analysis</artifactId>
             <version>1.0.2</version>
@@ -82,6 +88,12 @@
             <groupId>com.commsen.stopwatch.api</groupId>
             <artifactId>stopwatch</artifactId>
             <version>0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

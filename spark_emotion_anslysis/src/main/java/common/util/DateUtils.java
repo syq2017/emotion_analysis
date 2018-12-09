@@ -24,9 +24,8 @@ public class DateUtils {
      */
     public static int getShortSleepSeconds() {
         Random random = new Random();
-        return random.nextInt(3) + 3;
+        return random.nextInt(2) + 3;
     }
-
 
     public static void main(String[] args) {
         System.out.println(getShortSleepSeconds());

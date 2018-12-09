@@ -1,12 +1,22 @@
 package common.util;
 
+import com.huaban.analysis.jieba.JiebaSegmenter;
+import com.huaban.analysis.jieba.SegToken;
 import common.beans.MovieCommon;
 import common.beans.RankMovie;
 import common.beans.RankMovieList;
 import common.constants.Constants;
+import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import step1.corpus.process.CorpusSegUtils;
+import step1.corpus.process.MovieCommonCorpusUtils;
 
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,6 +25,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -51,13 +62,7 @@ public class MySQLUtils {
     //查询当前已有的电影ID，避免重复下载
     static {
         String sql = "select id from RankMovie";
-        try {
-            getAllId(sql, "id").stream().forEach(ele -> movieIds.add(ele));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        getAllId(sql, "id").stream().forEach(ele -> movieIds.add(ele));
     }
 
 	/**
@@ -66,7 +71,7 @@ public class MySQLUtils {
 	 * @return
 	 * @throws ClassNotFoundException
 	 */
-	private static ResultSet getQueryResult(String sqlStr) throws ClassNotFoundException {
+	private static ResultSet getQueryResult(String sqlStr) {
 		try{
 			// 注册 JDBC 驱动
 			Class.forName(JDBC_DRIVER);
@@ -77,8 +82,10 @@ public class MySQLUtils {
 			return rs;
 		}catch (SQLException se) {
 			se.printStackTrace();
-		}
-		return null;
+		} catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
 	}
 
 	/**
@@ -88,13 +95,17 @@ public class MySQLUtils {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	public static ArrayList<String> getAllId(String sql,String idName) throws ClassNotFoundException, SQLException{
+	public static ArrayList<String> getAllId(String sql,String idName) {
 		ResultSet rs = getQueryResult(sql);
 		ArrayList<String> ids = new ArrayList<>();
-		while(rs.next()) {
-			String id = rs.getString(idName);
-			ids.add(id);
-		}
+        try {
+		    while(rs.next()) {
+                String id = rs.getString(idName);
+                ids.add(id);
+            }
+		} catch (SQLException e) {
+            e.printStackTrace();
+        }
 		return ids;
 	}
 
@@ -205,6 +216,57 @@ public class MySQLUtils {
         logger.info("insert {} rows!", datas.size());
     }
 
+    /**
+     * 查询所有的短评并分词，结果存入队列
+     */
+    public static void storeAllSegMovieCommons(String dstFile) {
+        BufferedWriter writer = null;
+        try {
+            writer= new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(dstFile, true), "GB18030"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String sql = "select common_level,common from MovieCommon limit ";
+        int start = 0;
+        int step = 5000;
+        while (true){
+            StopWatch stopWatch = new StopWatch();
+            String querySql = sql + start + "," + step;
+            start += step;
+            System.out.println("querySql:" + querySql);
+            try {
+                ResultSet queryResult = getQueryResult(querySql);
+                while (queryResult.next()) {
+                    String common = queryResult.getString("common");
+                    JiebaSegmenter jiebaSegmenter = CorpusSegUtils.jiebaSegmenterPool.borrowObject();
+                    StringBuilder stringBuilder = CorpusSegUtils.stringBuilderPool.borrowObject();
+
+                    List<SegToken> segsTitle = jiebaSegmenter.process(common, JiebaSegmenter.SegMode.SEARCH);
+                    segsTitle.removeIf(seg -> CorpusSegUtils.stopWords.contains(seg.word));
+                    segsTitle.stream().forEach(ele -> stringBuilder.append(ele.word + " "));
+
+                    String result = stringBuilder.toString() + "\r\n";
+                    CorpusSegUtils.jiebaSegmenterPool.returnObject(jiebaSegmenter);
+                    CorpusSegUtils.stringBuilderPool.returnObject(stringBuilder);
+                    writer.write(result);
+                }
+                writer.flush();
+                long time = stopWatch.getTime();
+                logger.info("sql:{},cost:{}ms", sql, time);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 	public static Connection getConn() throws ClassNotFoundException, SQLException {
 		return conn;
