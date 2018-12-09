@@ -217,7 +217,8 @@ public class MySQLUtils {
     }
 
     /**
-     * 查询所有的短评并分词，结果存入队列
+     * 查询所有的短评并分词，写入文件 dstFile
+     * @param dstFile
      */
     public static void storeAllSegMovieCommons(String dstFile) {
         BufferedWriter writer = null;
@@ -239,6 +240,7 @@ public class MySQLUtils {
             System.out.println("querySql:" + querySql);
             try {
                 ResultSet queryResult = getQueryResult(querySql);
+                if (queryResult.getFetchSize() == 0) break;
                 while (queryResult.next()) {
                     String common = queryResult.getString("common");
                     JiebaSegmenter jiebaSegmenter = CorpusSegUtils.jiebaSegmenterPool.borrowObject();
@@ -266,6 +268,50 @@ public class MySQLUtils {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * 查询所有的短评级及评，写入文件 dstFile，格式： level    common(中间一个制表符分隔)
+     * @param dstFile
+     */
+    public static void storeAllMovieCommonAndLevel(String dstFile) {
+        BufferedWriter writer = null;
+        try {
+            writer= new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(dstFile, true), "GB18030"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String sql = "select common_level,common from MovieCommon limit ";
+        int start = 0;
+        int step = 5000;
+        int total = 1120000;
+        while (true) {
+            String querySql = sql + start + "," + step;
+            start += step;
+            if (start > total) break;
+            System.out.println("querySql:" + querySql);
+            try {
+                ResultSet queryResult = getQueryResult(querySql);
+                while (queryResult.next()) {
+                    String level = queryResult.getString("common_level");
+                    String common = queryResult.getString("common");
+                    writer.write(level + "\t" + common + "\r\n");
+                }
+                writer.flush();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            writer.flush();
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 	public static Connection getConn() throws ClassNotFoundException, SQLException {
@@ -299,7 +345,11 @@ public class MySQLUtils {
 
 	@MyTestIgnore
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Connection connection = getConn();
-        Properties clientInfo = connection.getClientInfo();
+//        Connection connection = getConn();
+//        Properties clientInfo = connection.getClientInfo();
+        String sql = "select common_level,common from MovieCommon limit 22875000,5000";
+        ResultSet queryResult = getQueryResult(sql);
+        System.out.println(queryResult.getFetchSize());
+
     }
 }
