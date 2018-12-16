@@ -1,4 +1,4 @@
-package step0.corpus.crawl;
+package corpus.crawl;
 
 import com.google.gson.Gson;
 import common.beans.MovieCommon;

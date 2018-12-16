@@ -1,9 +1,11 @@
 package common.util;
 
+import org.apache.commons.lang3.time.StopWatch;
 import org.mozilla.intl.chardet.nsDetector;
 import org.mozilla.intl.chardet.nsICharsetDetectionObserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.util.parsing.combinator.testing.Str;
 
 import javax.annotation.concurrent.NotThreadSafe;
 import java.io.BufferedInputStream;
@@ -12,14 +14,19 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.List;
 
 @NotThreadSafe
 public class FileUtils {
-
     private static Logger logger = LoggerFactory.getLogger(FileUtils.class.getName());
+    private static final String ENCODE_GB18030 = "GB18030";
+    private static final String ENCODE_UTF8 = "UTF-8";
     private static boolean found = false;
     private static String encoding = null;
 
@@ -30,7 +37,19 @@ public class FileUtils {
      */
     public static BufferedWriter buildWriter(String fileName) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(new File(fileName)));
+            BufferedWriter writer =  new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(fileName, true), ENCODE_UTF8));
+            return writer;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static BufferedWriter buildWriter(String fileName, String encode) {
+        try {
+            BufferedWriter writer = new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(fileName, true), encode));
             return writer;
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,7 +64,19 @@ public class FileUtils {
      */
     public static BufferedReader buildReader(String fileName) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream(fileName), ENCODE_UTF8));
+            return reader;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static BufferedReader buildReader(String fileName, String encode) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    new FileInputStream(fileName), encode));
             return reader;
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,8 +88,9 @@ public class FileUtils {
      * 释放资源
      * @param writer
      */
-    public static void realeaseWriter (BufferedWriter writer) {
+    public static void releaseWriter (BufferedWriter writer) {
         try {
+            writer.flush();
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,7 +101,7 @@ public class FileUtils {
      * 释放资源
      * @param reader
      */
-    public static void realeaseReader (BufferedReader reader) {
+    public static void releaseReader (BufferedReader reader) {
         try {
             reader.close();
         } catch (IOException e) {
@@ -216,6 +248,35 @@ public class FileUtils {
         return encoding;
     }
 
+    /**
+     * 合并文件
+     * @param paths 多个待合并文件的路径
+     * @param dstPath 合并结果路径
+     */
+    public static void mergeFile(List<String> paths, String dstPath) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        int linesCnt = 0;
+        BufferedWriter writer = buildWriter(dstPath, ENCODE_GB18030);
+        for (String path : paths) {
+            BufferedReader reader = buildReader(path,ENCODE_GB18030);
+            String line;
+            while ((line = readLine(reader)) != null) {
+                write(line, writer);
+                linesCnt ++;
+                if (linesCnt % 100000 == 0) {
+                    logger.info("writed: {} lines", linesCnt);
+                }
+            }
+            releaseReader(reader);
+        }
+        releaseWriter(writer);
+        long time = stopWatch.getTime();
+        logger.info("writed: {} lines, cost:{} ms", linesCnt, time);
+    }
+
+
+    @MyTestIgnore
     public static void main(String[] args) {
         String rawFilePath = "F:\\taobao-code\\nlp\\全网新闻数据(SogouCA)\\2012年6月—7月news_tensite_xml.full\\news_tensite_xml.dat";
         try {
@@ -224,7 +285,6 @@ public class FileUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }

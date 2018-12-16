@@ -1,13 +1,15 @@
-package step1.corpus.process;
+package corpus.process;
 
 import com.google.common.collect.Lists;
 import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.huaban.analysis.jieba.SegToken;
 import common.util.JiebaSegmenterFactory;
+import common.util.MyTestIgnore;
 import common.util.StringBuilderFactory;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +44,7 @@ public class CorpusSegUtils {
     private static final String contenttitleEnd = "</contenttitle>";
     private static final String contentStart = "<content>";
     private static final String contentEnd = "</content>";
-    private static String segsFilePath1 = "F:\\taobao-code\\nlp\\segs\\segs-1.txt";
+    public static String segsFilePath1 = "F:\\taobao-code\\nlp\\segs\\segs-1.txt";
     private static String segsFilePath2 = "F:\\taobao-code\\nlp\\segs\\segs-2.txt";
     private static final String encode = "GB18030";
     private static final int loggerNum = 5000;
@@ -59,7 +61,7 @@ public class CorpusSegUtils {
         String filePath = "F:\\taobao-code\\nlp\\stop-words.txt";
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(filePath), encode))) {
-            String line = null;
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 stopWords.add(line.trim());
             }
@@ -87,7 +89,7 @@ public class CorpusSegUtils {
             new GenericObjectPool<>(new StringBuilderFactory());
 
 
-    //分词线程池 12最大线程个数，本机逻辑CPU核数为16，使用时建议修改
+    //分词线程池 15线程个数，本机逻辑CPU核数为16，使用时建议修改
     private static ExecutorService segExecutorService = Executors.newFixedThreadPool(15);
     // 将分词结果写入文件线程池
     private static ExecutorService writerExecutorService = Executors.newFixedThreadPool(1);
@@ -195,11 +197,6 @@ public class CorpusSegUtils {
 
         @Override
         public void run() {
-//            List<String> datas = Lists.newArrayList();
-//            datas.add("F:\\taobao-code\\nlp\\全网新闻数据(SogouCA)\\2012年6月—7月news_tensite_xml.full");
-//            datas.add("F:\\taobao-code\\nlp\\全网新闻数据(SogouCA)\\SogouCA.tar\\SogouCA");
-//            datas.add("F:\\taobao-code\\nlp\\搜狐新闻数据(SogouCS)\\news_sohusite_xml.full.tar\\news_sohusite_xml.full");
-//            datas.add("F:\\taobao-code\\nlp\\搜狐新闻数据(SogouCS)\\SogouCS.tar\\SogouCS");
             try {
                 corpusSegProcess(datas);
             } catch (IOException e) {
@@ -311,4 +308,56 @@ public class CorpusSegUtils {
             }
         }
     }
+
+    private static int getCorpusFileLinesNum(List<String> fileParentPaths) throws IOException {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        long cnt = 0;
+        for (String path : fileParentPaths) {
+            File parentPath = new File(path);
+            if (parentPath.isDirectory()) {
+                File[] corpusFiles = parentPath.listFiles();
+                StopWatch singleWatch = new StopWatch();
+                singleWatch.start();
+                for (File corpus : corpusFiles) {
+                    logger.info("filename:{}", corpus.getAbsolutePath());
+                    try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
+                            new FileInputStream(corpus), encode))) {
+                        String lineContent = null;
+                        while ((lineContent = bufferedReader.readLine()) != null) {
+                            cnt ++;
+                        }
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                singleWatch.stop();
+                long singleFileTime = singleWatch.getTime();
+                logger.info("seg file:{}, cost:{}ms", parentPath, singleFileTime);
+            }
+        }
+        long time = stopWatch.getTime();
+        stopWatch.stop();
+        logger.info("cost:{}ms", time);
+        logger.info("seg lines:{}", cnt);
+        return 0;
+    }
+
+    @MyTestIgnore
+    public static void main(String[] args) {
+        BasicConfigurator.configure();
+        List<String> datas = Lists.newArrayList();
+        datas.add("F:\\taobao-code\\nlp\\全网新闻数据(SogouCA)\\2012年6月—7月news_tensite_xml.full");
+        datas.add("F:\\taobao-code\\nlp\\全网新闻数据(SogouCA)\\SogouCA.tar\\SogouCA");
+        datas.add("F:\\taobao-code\\nlp\\搜狐新闻数据(SogouCS)\\news_sohusite_xml.full.tar\\news_sohusite_xml.full");
+        datas.add("F:\\taobao-code\\nlp\\搜狐新闻数据(SogouCS)\\SogouCS.tar\\SogouCS");
+        try {
+            getCorpusFileLinesNum(datas);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

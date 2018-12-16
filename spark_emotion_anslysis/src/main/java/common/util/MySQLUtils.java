@@ -9,8 +9,7 @@ import common.constants.Constants;
 import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import step1.corpus.process.CorpusSegUtils;
-import step1.corpus.process.MovieCommonCorpusUtils;
+import corpus.process.CorpusSegUtils;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -26,7 +25,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Properties;
 import java.util.Set;
 
 public class MySQLUtils {

@@ -1,16 +1,13 @@
-package step0.corpus.crawl;
+package corpus.crawl;
 
 import com.google.gson.Gson;
 import common.beans.Captcha;
 import common.constants.Constants;
 import common.util.HttpUtils;
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CookieStore;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -18,13 +15,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.util.parsing.combinator.PackratParsers;
 
-import javax.xml.ws.http.HTTPBinding;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,7 +27,6 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

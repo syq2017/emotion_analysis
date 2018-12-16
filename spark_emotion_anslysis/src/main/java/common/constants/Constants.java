@@ -55,4 +55,39 @@ public class Constants {
     public static String MOVIE_COLLECTIONS_URL =
             "https://movie.douban.com/subject/%s/comments?start=%d&limit=20&sort=new_score&status=P&comments_only=1";
 
+    //分词中保留符号训练
+    public static final String EXCLAMATION_CN= "叹号";
+    public static final String QUESTION_MARK_CN = "问号";
+    public static final String ELLIPSIS_CN = "省略号";
+
+    public static final String EXCLAMATION = "!"; //中英文叹号
+    public static final String EXCLAMATION_EN = "！"; //中英文叹号
+
+    public static final String QUESTION_MARK = "？"; //
+    public static final String QUESTION_MARK_EN = "?"; //
+    public static final Set<String> ELLIPSIS = new HashSet<>();
+    static {
+        ELLIPSIS.add("..");
+        ELLIPSIS.add("...");
+        ELLIPSIS.add("....");
+        ELLIPSIS.add(".....");
+        ELLIPSIS.add("......");
+        ELLIPSIS.add("。。");
+        ELLIPSIS.add("。。。");
+        ELLIPSIS.add("。。。。");
+        ELLIPSIS.add("。。。。。");
+        ELLIPSIS.add("。。。。。。");
+    }
+
+    //需要过滤的符号
+    public static String[] PUNCTUATIONS = {"`", "!", "@", "#", "$", "%", "^", "&", "*", "(",
+            ")", "_", "-", "=", "+", "·", "！", "￥", "（", "）",
+            "【", "{", "}", "】", "、", "|", "[", "]", ",", "，","",
+            ".", "。", "？", "?", "/", "、","<", ">", "《", "》", ":", "：", "'", "‘", "；", ";"};
+    public static final String COMMA = "，";
+    public static final String EMPTY = "";
+    public static HashSet<String> PUNCTUATIONS_SET = new HashSet<>();
+    static {
+        Arrays.asList(PUNCTUATIONS).stream().forEach(PUNCTUATIONS_SET::add);
+    }
 }
