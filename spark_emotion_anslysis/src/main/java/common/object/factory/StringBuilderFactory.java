@@ -1,4 +1,4 @@
-package common.util;
+package common.object.factory;
 
 import com.huaban.analysis.jieba.JiebaSegmenter;
 import org.apache.commons.pool2.BasePooledObjectFactory;

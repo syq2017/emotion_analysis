@@ -50,7 +50,7 @@ public class Word2Vec {
     private double alpha;       // 学习率，并行时由线程更新
     private double alphaThresold;
     private double initialAlpha;  // 初始学习率
-    private int freqThresold = 5;
+    private int freqThresold;
     private final byte[] alphaLock = new byte[0];  // alpha同步锁
     private final byte[] treeLock = new byte[0];  // alpha同步锁
     private final byte[] vecLock = new byte[0];  // alpha同步锁
@@ -60,13 +60,12 @@ public class Word2Vec {
     private static final int MAX_EXP = 6;
 
     private Map<String, WordNeuron> neuronMap;
-//    private List<Word> words;
     private int totalWordCount;     // 语料中的总词数
     private int currentWordCount;   // 当前已阅的词数，并行时由线程更新
     private int numOfThread;        // 线程个数
 
     // 单词或短语计数器
-    private Counter<String> wordCounter = new Counter<String>();
+    private Counter<String> wordCounter = new Counter<>();
 
     private File tempCorpus = null;
     private BufferedWriter tempCorpusWriter;
@@ -143,7 +142,6 @@ public class Word2Vec {
         freqThresold = factory.freqThresold;
         trainMethod = factory.trainMethod;
         sample = factory.sample;
-//        negativeSample = factory.negativeSample;
         alpha = factory.alpha;
         initialAlpha = alpha;
         alphaThresold = factory.alphaThreshold;
@@ -278,7 +276,6 @@ public class Word2Vec {
             LineIterator.closeQuietly(li);
             if (!tempCorpus.delete()){
                 logger.error("unable to delete temp file in "+tempCorpus.getAbsolutePath());
-//                System.err.println("临时文件未被正确删除，位于"+tempCorpus.getAbsolutePath());
             }
             tempCorpus = null;
         }

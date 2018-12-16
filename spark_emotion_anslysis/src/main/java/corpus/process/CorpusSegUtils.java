@@ -3,9 +3,10 @@ package corpus.process;
 import com.google.common.collect.Lists;
 import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.huaban.analysis.jieba.SegToken;
-import common.util.JiebaSegmenterFactory;
+import common.object.factory.JiebaSegmenterFactory;
+import common.object.pool.JiebaSegmenterPool;
 import common.util.MyTestIgnore;
-import common.util.StringBuilderFactory;
+import common.object.factory.StringBuilderFactory;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
@@ -80,21 +81,10 @@ public class CorpusSegUtils {
         }
     }
 
-    //JiebaSegmenter 对象池
-    public static ObjectPool<JiebaSegmenter> jiebaSegmenterPool =
-            new GenericObjectPool<>(new JiebaSegmenterFactory());
-
-    //StringBuilder对象池
-    public static ObjectPool<StringBuilder> stringBuilderPool =
-            new GenericObjectPool<>(new StringBuilderFactory());
-
-
     //分词线程池 15线程个数，本机逻辑CPU核数为16，使用时建议修改
     private static ExecutorService segExecutorService = Executors.newFixedThreadPool(15);
     // 将分词结果写入文件线程池
     private static ExecutorService writerExecutorService = Executors.newFixedThreadPool(1);
-
-
 
     /**
      *抽取样例数据观察
@@ -214,7 +204,7 @@ public class CorpusSegUtils {
         @Override
         public String call() throws Exception {
             while (true) {
-                JiebaSegmenter jiebaSegmenter = jiebaSegmenterPool.borrowObject();
+                JiebaSegmenter jiebaSegmenter = JiebaSegmenterPool.jiebaSegmenterPool.borrowObject();
                 StringBuilder stringBuilder = new StringBuilder();
                 if (readLinesCount.get() == 0) {
                     break;
@@ -224,7 +214,7 @@ public class CorpusSegUtils {
                 segsTitle.removeIf(seg -> stopWords.contains(seg.word));
                 segsTitle.stream().forEach(ele -> stringBuilder.append(ele.word + " "));
                 String result = stringBuilder.toString() + "\r\n";
-                jiebaSegmenterPool.returnObject(jiebaSegmenter);
+                JiebaSegmenterPool.jiebaSegmenterPool.returnObject(jiebaSegmenter);
                 if (segsLinesCount.incrementAndGet() % loggerNum == 0) {
                     logger.info("segs:{}", segsLinesCount.get());
                 }

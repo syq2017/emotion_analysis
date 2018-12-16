@@ -1,5 +1,6 @@
 package common.util;
 
+import javafx.scene.paint.Stop;
 import org.apache.commons.lang3.time.StopWatch;
 import org.mozilla.intl.chardet.nsDetector;
 import org.mozilla.intl.chardet.nsICharsetDetectionObserver;
@@ -21,12 +22,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.List;
+import java.util.WeakHashMap;
 
 @NotThreadSafe
 public class FileUtils {
     private static Logger logger = LoggerFactory.getLogger(FileUtils.class.getName());
-    private static final String ENCODE_GB18030 = "GB18030";
-    private static final String ENCODE_UTF8 = "UTF-8";
+    public static final String ENCODE_GB18030 = "GB18030";
+    public static final String ENCODE_UTF8 = "UTF-8";
     private static boolean found = false;
     private static String encoding = null;
 
@@ -275,6 +277,22 @@ public class FileUtils {
         logger.info("writed: {} lines, cost:{} ms", linesCnt, time);
     }
 
+    /**
+     * 文件拷贝
+     * @param rawFile
+     * @param dstFile
+     */
+    public static void fileCopy(String rawFile, String dstFile) {
+        logger.info("file copy from {} to {} .....", rawFile, dstFile);
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        try {
+            org.apache.commons.io.FileUtils.copyFile(new File(rawFile), new File(dstFile));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        logger.info("file copy done, cost: {}ms", stopWatch.getTime());
+    }
 
     @MyTestIgnore
     public static void main(String[] args) {

@@ -2,35 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d70cd0a-4710-479d-8b65-5f4f733170cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/Counter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/LineIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/HuffmanNeuron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/WordNeuron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/object/pool/JiebaSegmenterPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/object/pool/StringBuilderPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corpus/train/CommonSegForML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corpus/train/LogisticTrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corpus/train/RandomForestTrain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/Learn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/Word2VEC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/domain/HiddenNeuron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/domain/Neuron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/domain/WordEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/domain/WordNeuron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/util/Haffman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/util/MapCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ansj/vec/util/WordKmeans.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/JiebaSegmenterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/object/factory/JiebaSegmenterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/corpus/process/extract/raw/step1/pennyjobsharing/Pennyjobsharing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieBaseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieBaseInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieDetailInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/LoginDouban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/crawl/LoginDouban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step1/corpus/process/CorpusSegUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step1/corpus/process/MovieCommonCorpusUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/util/StringBuilderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/object/factory/StringBuilderFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/common/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/constants/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/common/util/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/common/util/FileUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/corpus/process/extract/raw/step1/pennyjobsharing/Pennyjobsharing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/DownMovieBaseInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/step0/corpus/crawl/LoginDouban.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,29 +58,29 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="java" value="11521" />
-          <entry key="xml" value="27" />
+          <entry key="java" value="14844" />
+          <entry key="xml" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11521" />
+          <entry key="JAVA" value="14844" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="XML" value="27" />
+          <entry key="XML" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="4" />
-          <entry key="java" value="66" />
-          <entry key="xml" value="5" />
+          <entry key="java" value="138" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="66" />
-          <entry key="XML" value="5" />
+          <entry key="JAVA" value="138" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -99,22 +99,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/LogisticTrain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="816" selection-start-line="816" selection-end-line="816" />
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,8 +113,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+            <state relative-caret-position="300">
+              <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/RandomForestTrain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="123" column="61" selection-start-line="123" selection-start-column="61" selection-end-line="123" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="521" column="23" lean-forward="true" selection-start-line="521" selection-start-column="23" selection-end-line="521" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#loadFromFile#0;class#VectorModel#0" />
+                <element signature="method#similar#0;class#VectorModel#0" />
+                <element signature="method#analogy#0;class#VectorModel#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/util/FileUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="286" column="46" lean-forward="true" selection-start-line="286" selection-start-column="46" selection-end-line="286" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,22 +173,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="304">
+              <caret line="282" selection-start-line="282" selection-end-line="282" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#14377#14378#0" expanded="true" />
-                <element signature="e#14431#14432#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -186,9 +211,16 @@
       <find>main</find>
       <find>LONG_PATTERN</find>
       <find>10</find>
-      <find>vectorSize</find>
       <find>EXP_TABLE_SIZE</find>
       <find>dateToS</find>
+      <find>200</find>
+      <find>vectorSize</find>
+      <find>300</find>
+      <find>FILE_PATTERN</find>
+      <find>allCorpusSegResultFile</find>
+      <find>train</find>
+      <find>RandomForestModel</find>
+      <find>prepare</find>
     </findStrings>
     <dirStrings>
       <dir>F:\taobao-code\nlp\emotion_analysis\spark_emotion_anslysis\src\main\java\step1\corpus\process</dir>
@@ -211,24 +243,32 @@
         <option value="$PROJECT_DIR$/src/main/java/common/util/MathUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/step1/corpus/process/MovieCommonSegService.java" />
         <option value="$PROJECT_DIR$/src/main/java/step0/corpus/crawl/DownMovieDetailInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/step1/corpus/process/MovieCommonCorpusUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/step1/corpus/process/CorpusSegUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/util/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/Counter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/LineIterator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/HuffmanNeuron.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/WordNeuron.java" />
-        <option value="$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/constants/Constants.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java" />
         <option value="$PROJECT_DIR$/src/main/java/common/util/DateUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/object/factory/JiebaSegmenterFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/object/pool/StringBuilderPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/object/pool/JiebaSegmenterPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/train/CommonSegForML.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/train/RandomForestModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/train/RandomForestTrain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/train/LogisticTrain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/util/FileUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
@@ -299,15 +339,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -317,6 +348,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="corpus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark_emotion_anslysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="corpus" type="462c0819:PsiDirectoryNode" />
+              <item name="crawl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spark_emotion_anslysis" type="b2602c69:ProjectViewProjectNode" />
@@ -353,7 +393,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544927246232" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544977923456" />
     <property name="last_opened_file_path" value="F:/software/tools/commons-pool2-2.6.0-bin/commons-pool2-2.6.0/commons-pool2-2.6.0-javadoc.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -400,7 +440,7 @@
       <module name="spark_emotion_anslysis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="common.util.*" />
+          <option name="PATTERN" value="common.object.factory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -451,8 +491,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.DateUtils" />
         <item itemvalue="Application.TrainWord2Vec" />
+        <item itemvalue="Application.DateUtils" />
         <item itemvalue="Application.CorpusSegUtils" />
         <item itemvalue="Application.MovieCommonCorpusUtils" />
       </list>
@@ -476,7 +516,7 @@
       <workItem from="1544282174833" duration="5963000" />
       <workItem from="1544289585078" duration="13994000" />
       <workItem from="1544832389078" duration="12966000" />
-      <workItem from="1544874060637" duration="13116000" />
+      <workItem from="1544874060637" duration="34755000" />
     </task>
     <servers />
   </component>
@@ -495,7 +535,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83460000" />
+    <option name="totallyTimeSpent" value="105099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,7 +551,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19509594" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
@@ -520,7 +560,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.40499458" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5165245" visible="true" weight="0.22909881" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5165245" visible="true" weight="0.2703583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33224756" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,7 +593,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.40499458" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5165245" visible="true" weight="0.27578717" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5165245" visible="true" weight="0.247557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33224756" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -583,100 +623,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8829">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/MovieCommonPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/Main.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieBaseInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/process/extract/raw/step1/pennyjobsharing/Pennyjobsharing.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/beans/NewsContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/16.0.1/guava-16.0.1.jar!/com/google/common/collect/Lists.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/software/tools/commons-pool2-2.6.0-bin/commons-pool2-2.6.0/commons-pool2-2.6.0-sources.jar!/org/apache/commons/pool2/BaseObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/JiebaSegmenterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/StringBuilderFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar!/org/apache/commons/lang3/time/StopWatch.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/software/tools/commons-pool2-2.6.0-bin/commons-pool2-2.6.0/commons-pool2-2.6.0-sources.jar!/org/apache/commons/pool2/ObjectPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="93" column="34" lean-forward="true" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/software/tools/commons-pool2-2.6.0-bin/commons-pool2-2.6.0/commons-pool2-2.6.0-sources.jar!/org/apache/commons/pool2/impl/GenericObjectPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="882" selection-start-line="882" selection-end-line="882" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/software/tools/commons-pool2-2.6.0-bin/commons-pool2-2.6.0/commons-pool2-2.6.0-sources.jar!/org/apache/commons/pool2/BasePooledObjectFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -699,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MathUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/software/jdk8/install/src.zip!/java/util/concurrent/LinkedBlockingQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -721,37 +660,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/step1/corpus/process/MovieCommonSegService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ansj/vec/Word2VEC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieDetailInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/LoginDouban.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="124" column="60" lean-forward="true" selection-start-line="124" selection-start-column="60" selection-end-line="124" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ansj/vec/Learn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="442" column="30" selection-start-line="442" selection-start-column="30" selection-end-line="442" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/software/jdk8/install/src.zip!/java/util/concurrent/ExecutorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6030">
@@ -766,89 +674,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="345" column="17" lean-forward="true" selection-start-line="345" selection-start-column="17" selection-end-line="345" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="264" column="36" lean-forward="true" selection-start-line="264" selection-start-column="36" selection-end-line="264" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/Counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/LineIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1310">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/HuffmanNeuron.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/WordNeuron.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/software/jdk8/install/src.zip!/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="196" column="7" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,12 +706,203 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/LoginDouban.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="238">
+          <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieDetailInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/crawl/DownMovieBaseInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1393">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3059">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MathUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MyTestIgnore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/OSUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/PropertyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/RawFileFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/Segmention.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3013">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/object/factory/StringBuilderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="57" lean-forward="true" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/object/factory/JiebaSegmenterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/object/pool/JiebaSegmenterPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/object/pool/StringBuilderPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/MySQLUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="298" column="51" selection-start-line="298" selection-start-column="51" selection-end-line="298" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="817" column="74" selection-start-line="817" selection-start-column="62" selection-end-line="817" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/process/MovieCommonCorpusUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/Counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/HuffmanTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/HuffmanNeuron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/WordNeuron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-446">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/process/CorpusSegUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="46" />
+          <folding>
             <element signature="method#getSampleData#0;class#CorpusSegUtils#0" />
           </folding>
         </state>
@@ -890,22 +910,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/Tokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="121">
+          <caret line="102" column="16" lean-forward="true" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/CommonSegForML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/util/LineIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="116" column="9" lean-forward="true" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ansj/vec/Learn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="268">
+          <caret line="437" column="26" selection-start-line="437" selection-start-column="26" selection-end-line="437" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ansj/vec/Word2VEC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="357" selection-start-line="357" selection-end-line="357" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ansj/vec/domain/WordEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/LogisticTrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/RandomForestTrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="123" column="61" selection-start-line="123" selection-start-column="61" selection-end-line="123" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -914,40 +985,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/Word2Vec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="304">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14377#14378#0" expanded="true" />
-            <element signature="e#14431#14432#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/DateUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/corpus/train/TrainWord2Vec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="816" selection-start-line="816" selection-end-line="816" />
+        <state relative-caret-position="300">
+          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/util/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="286" column="46" lean-forward="true" selection-start-line="286" selection-start-column="46" selection-end-line="286" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nlp/vec/VectorModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="521" column="23" lean-forward="true" selection-start-line="521" selection-start-column="23" selection-end-line="521" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadFromFile#0;class#VectorModel#0" />
+            <element signature="method#similar#0;class#VectorModel#0" />
+            <element signature="method#analogy#0;class#VectorModel#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="412">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>

@@ -6,6 +6,8 @@ import common.beans.MovieCommon;
 import common.beans.RankMovie;
 import common.beans.RankMovieList;
 import common.constants.Constants;
+import common.object.pool.JiebaSegmenterPool;
+import common.object.pool.StringBuilderPool;
 import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -241,16 +243,16 @@ public class MySQLUtils {
                 if (queryResult.getFetchSize() == 0) break;
                 while (queryResult.next()) {
                     String common = queryResult.getString("common");
-                    JiebaSegmenter jiebaSegmenter = CorpusSegUtils.jiebaSegmenterPool.borrowObject();
-                    StringBuilder stringBuilder = CorpusSegUtils.stringBuilderPool.borrowObject();
+                    JiebaSegmenter jiebaSegmenter = JiebaSegmenterPool.jiebaSegmenterPool.borrowObject();
+                    StringBuilder stringBuilder = StringBuilderPool.stringBuilderPool.borrowObject();
 
                     List<SegToken> segsTitle = jiebaSegmenter.process(common, JiebaSegmenter.SegMode.SEARCH);
                     segsTitle.removeIf(seg -> CorpusSegUtils.stopWords.contains(seg.word));
                     segsTitle.stream().forEach(ele -> stringBuilder.append(ele.word + " "));
 
                     String result = stringBuilder.toString() + "\r\n";
-                    CorpusSegUtils.jiebaSegmenterPool.returnObject(jiebaSegmenter);
-                    CorpusSegUtils.stringBuilderPool.returnObject(stringBuilder);
+                    JiebaSegmenterPool.jiebaSegmenterPool.returnObject(jiebaSegmenter);
+                    StringBuilderPool.stringBuilderPool.returnObject(stringBuilder);
                     writer.write(result);
                 }
                 writer.flush();

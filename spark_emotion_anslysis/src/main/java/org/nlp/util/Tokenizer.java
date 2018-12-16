@@ -1,7 +1,7 @@
 package org.nlp.util;
 
-import com.google.common.collect.Lists;
 import common.constants.Constants;
+import corpus.process.CorpusSegUtils;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -95,8 +95,16 @@ public class Tokenizer {
      * @param line
      * @return
      */
-    public static String filterStopAndSwap(String line) {
-        List<String> words = Lists.newArrayList(line.split(" "));
+    public static String filterStopWordAndSwap(String line) {
+        return filterStopWordAndSwap(Arrays.asList(line.split(" ")));
+    }
+
+    /**
+     * 替换、过滤特殊字符
+     * @param words
+     * @return
+     */
+    public static String filterStopWordAndSwap(List<String> words) {
         String result = words.stream()
                 .map(ele -> ele = ele.replace(Constants.EXCLAMATION, Constants.EXCLAMATION_CN))
                 .map(ele -> ele = ele.replace(Constants.EXCLAMATION_EN, Constants.EXCLAMATION_CN))
@@ -104,6 +112,8 @@ public class Tokenizer {
                 .map(ele -> ele = ele.replace(Constants.QUESTION_MARK_EN, Constants.QUESTION_MARK_CN))
                 .map(ele -> ele = Constants.ELLIPSIS.contains(ele) ? Constants.ELLIPSIS_CN : ele)
                 .map(ele -> ele = ele.replace(Constants.COMMA, Constants.EMPTY))
+                .map(ele -> ele = Constants.PUNCTUATIONS_SET.contains(ele) ? "" : ele)
+                .map(ele -> CorpusSegUtils.stopWords.contains(ele) ? "" : ele)
                 .collect(Collectors.joining(" "));
         return result;
     }
