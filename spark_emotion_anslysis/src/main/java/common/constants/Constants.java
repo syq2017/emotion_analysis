@@ -1,5 +1,7 @@
 package common.constants;
 
+import com.google.common.collect.Maps;
+
 import javax.naming.ldap.HasControls;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,9 +38,15 @@ public class Constants {
     //五星 ---> 一星
     public static final String[] COMMENT_LEVEL = {"力荐", "推荐", "还行", "较差", "很差"};
     public static final Set<String> COMMENT_LEVEL_SET = new HashSet<String>();
+    public static final Map<String, Integer> COMMENT_LEVEL_MAP = Maps.newHashMap();
     static {
         Arrays.asList(COMMENT_LEVEL).stream().forEach(ele -> COMMENT_LEVEL_SET.add(ele));
+        for (int i = 0;i < COMMENT_LEVEL.length; i++) {
+            COMMENT_LEVEL_MAP.put(COMMENT_LEVEL[i], i);
+        }
     }
+
+
 
     //存储验证码图片的路径
     public static final String AUTH_CODE_PATH = "D:\\";
@@ -56,9 +64,9 @@ public class Constants {
             "https://movie.douban.com/subject/%s/comments?start=%d&limit=20&sort=new_score&status=P&comments_only=1";
 
     //分词中保留符号训练
-    public static final String EXCLAMATION_CN= "叹号";
-    public static final String QUESTION_MARK_CN = "问号";
-    public static final String ELLIPSIS_CN = "省略号";
+    public static final String EXCLAMATION_CN= "叹号 ";
+    public static final String QUESTION_MARK_CN = "问号 ";
+    public static final String ELLIPSIS_CN = "省略号 ";
 
     public static final String EXCLAMATION = "!"; //中英文叹号
     public static final String EXCLAMATION_EN = "！"; //中英文叹号

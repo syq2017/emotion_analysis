@@ -118,7 +118,7 @@ public class FileUtils {
      */
     public static void write(String content, BufferedWriter writer) {
         try {
-            writer.write(content + "\r");
+            writer.write(content + "\r\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

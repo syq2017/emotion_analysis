@@ -1,4 +1,4 @@
-package corpus.train;
+package spark.ml.train;
 
 /**
  * Created by cage
@@ -8,10 +8,13 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import common.util.DateUtils;
 import common.util.MyTestIgnore;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
@@ -30,10 +33,14 @@ import scala.Tuple2;
  * Random Forest模型
  */
 public class RandomForestTrain {
+
+    private static String rawFile = "F:\\taobao-code\\nlp\\segs\\level_and_common_seg_libsvm_checked_2018_12_23_09_09_45.txt";
+
+    private static String modelpath1Prefix = "F:\\taobao-code\\nlp\\model\\rf_%s";
     @MyTestIgnore
-    private static String rawFile = "D:\\software\\learning_work\\eclipse\\wp\\word2vec_cage\\src\\emotion\\parse\\train.txt";
-    @MyTestIgnore
-    private static String modelpath1 = "D:\\env-tools\\spark-2.2.1-bin-hadoop2.7\\mydata\\load\\rfModel2\\";
+//    private static String modelpath1 = String.format(modelpath1Prefix, DateUtils.dateToString(new Date(), DateUtils.FILE_PATTERN));
+    private static String modelpath1 = "F:\\taobao-code\\nlp\\model\\rf_2018_12_22_17_09_44\\";
+
     private SparkConf conf;
     private SparkContext sc;
     private static JavaRDD<LabeledPoint> trainingData;
@@ -46,7 +53,7 @@ public class RandomForestTrain {
         conf = new SparkConf().setAppName("RF").setMaster("local[*]");
         sc = new SparkContext(conf);
         JavaRDD<LabeledPoint> lpdata = MLUtils.loadLibSVMFile(sc, dataPath).toJavaRDD();
-        double[] trainAndTest = {0.7,0.3};
+        double[] trainAndTest = {0.8, 0.2};
         JavaRDD<LabeledPoint>[] twoPartData = lpdata.randomSplit(trainAndTest);
         allData = lpdata;
         this.trainingData = twoPartData[0];
@@ -62,11 +69,11 @@ public class RandomForestTrain {
         // Set parameters.
         //  Empty categoricalFeaturesInfo indicates all features are continuous.
         Map<Integer, Integer> categoricalFeaturesInfo = new HashMap<Integer, Integer>();
-        int numTrees = 6;
+        int numTrees = 12;
         String impurity = "variance";
         String featureSubsetStrategy = "sqrt";
-        Integer maxDepth = 5;
-        Integer maxBins = 100;
+        Integer maxDepth = 8;
+        Integer maxBins = 128;
         int seed = 12345;
         // Train a RandomForest model.
         final RandomForestModel model = RandomForest.trainRegressor(trainingData,
@@ -94,8 +101,9 @@ public class RandomForestTrain {
 //			tuple._1
             me = Math.abs(tuple._1()-tuple._2) > me ? Math.abs(tuple._1()-tuple._2) : me;
             percentSum +=  (float)Math.abs(tuple._1()-tuple._2) / tuple._2;
-            Integer subResult = (int) Math.abs(tuple._1() - tuple._2());
-            if(subResult <= 0.1){
+            Integer subResult = Math.abs(tuple._1() - tuple._2());
+//            if (new BigDecimal(tuple._1()).subtract(new BigDecimal(tuple._2())).compareTo(new BigDecimal("1")) <= 0) {
+            if (new BigDecimal(tuple._1()).compareTo(new BigDecimal(tuple._2())) == 0) {
                 right += 1;
             }else{
                 error += 1;
@@ -161,11 +169,11 @@ public class RandomForestTrain {
         RandomForestTrain gb = new RandomForestTrain();
         gb.prepare(rawFile);
 //		gb.train(allData, modelpath1);
-//		gb.predict(testData, modelpath1);
-        String string1 = "电池充完了电连手机都打不开.简直烂的要命.真是金玉其外,败絮其中!连5号电池都不如";
-        String string2 = "这手机真棒，从1米高的地方摔下去就坏了";
-        gb.getSentencePosOrNeg(string1, modelpath1);
-        gb.getSentencePosOrNeg(string2, modelpath1);
+		gb.predict(testData, modelpath1);
+//        String string1 = "电池充完了电连手机都打不开.简直烂的要命.真是金玉其外,败絮其中!连5号电池都不如";
+//        String string2 = "这手机真棒，从1米高的地方摔下去就坏了";
+//        gb.getSentencePosOrNeg(string1, modelpath1);
+//        gb.getSentencePosOrNeg(string2, modelpath1);
         gb.stop();
     }
 

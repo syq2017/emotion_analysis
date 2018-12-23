@@ -217,7 +217,7 @@ public class MySQLUtils {
     }
 
     /**
-     * 查询所有的短评并分词，写入文件 dstFile
+     * 查询所有的短评并分词，写入文件 dstFile,成为全部语料的一部分进行词向量训练
      * @param dstFile
      */
     public static void storeAllSegMovieCommons(String dstFile) {

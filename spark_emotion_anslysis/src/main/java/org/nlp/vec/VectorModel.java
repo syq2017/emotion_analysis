@@ -289,7 +289,7 @@ public class VectorModel {
      * @param vec2
      * @return
      */
-    private float calDist(float[] vec1, float[] vec2) {
+    public float calDist(float[] vec1, float[] vec2) {
         float dist = 0;
         for (int i = 0; i < vec1.length; i++) {
             dist += vec1[i] * vec2[i];
@@ -302,7 +302,7 @@ public class VectorModel {
      * @param sum 和向量
      * @param vec 添加向量
      */
-    private void calSum(float[] sum, float[] vec) {
+    public void calSum(float[] sum, float[] vec) {
         for (int i = 0; i < sum.length; i++) {
             sum[i] += vec[i];
         }

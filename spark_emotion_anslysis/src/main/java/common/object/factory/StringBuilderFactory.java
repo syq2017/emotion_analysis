@@ -1,23 +1,26 @@
 package common.object.factory;
 
-import com.huaban.analysis.jieba.JiebaSegmenter;
 import org.apache.commons.pool2.BasePooledObjectFactory;
 import org.apache.commons.pool2.PooledObject;
 import org.apache.commons.pool2.impl.DefaultPooledObject;
 
 /**
- * Created by cage on 2018-12-08
+ * Created by cage
  */
 public class StringBuilderFactory extends BasePooledObjectFactory<StringBuilder> {
 
     @Override
     public StringBuilder create() {
-        return new StringBuilder();
+        synchronized (this) {
+            return new StringBuilder();
+        }
     }
 
     @Override
     public PooledObject<StringBuilder> wrap(StringBuilder stringBuilder) {
-        return new DefaultPooledObject<>(stringBuilder);
+        synchronized (this) {
+            return new DefaultPooledObject<>(stringBuilder);
+        }
     }
 
     /**

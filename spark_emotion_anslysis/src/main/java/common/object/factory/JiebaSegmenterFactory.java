@@ -12,12 +12,16 @@ public class JiebaSegmenterFactory extends BasePooledObjectFactory<JiebaSegmente
 
     @Override
     public JiebaSegmenter create() {
-        return new JiebaSegmenter();
+        synchronized (this) {
+            return new JiebaSegmenter();
+        }
     }
 
     @Override
     public PooledObject<JiebaSegmenter> wrap(JiebaSegmenter jiebaSegmenter) {
-        return new DefaultPooledObject<>(jiebaSegmenter);
+        synchronized (this) {
+            return new DefaultPooledObject<>(jiebaSegmenter);
+        }
     }
 
 

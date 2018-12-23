@@ -98,7 +98,7 @@ public class CorpusSegUtils {
                 new InputStreamReader(new FileInputStream(rawFilePath), encode));
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(sampleDataPath), encode));
-        String line = null;
+        String line;
         for(int i=0;i<sampleLinesCnt;i++){
             line = bufferedReader.readLine();
             line += new Date().toString();

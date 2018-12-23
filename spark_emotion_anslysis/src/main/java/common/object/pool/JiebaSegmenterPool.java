@@ -12,4 +12,8 @@ public class JiebaSegmenterPool {
     //JiebaSegmenter 对象池
     public static ObjectPool<JiebaSegmenter> jiebaSegmenterPool =
             new GenericObjectPool<>(new JiebaSegmenterFactory());
+
+    public static ObjectPool<JiebaSegmenter> getJiebaSegmenterPool() {
+        return jiebaSegmenterPool;
+    }
 }
